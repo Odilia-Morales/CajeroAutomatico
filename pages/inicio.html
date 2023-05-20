@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="../style/main.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script defer src="../js/inicio.js"></script>
+    <script src="../js/Funcion-cuenta1.js"></script>
+</head>
+
+<body>
+    <main class="bg-dark text-white py-5">
+        <h1 class="text-center">¡Bienvenido!</h1>
+        <h3 id="userName" class="text-center"></h3>
+        <section class="container-sm pt-5">
+            <div class="d-grid gap-3 col-6 mx-auto">
+                <button class="btn btn-light" data-bs-target="#ConsultarSaldo" data-bs-toggle="modal"
+                    type="button">Consultar saldo</button>
+                <button class="btn btn-light" data-bs-target="#IngresarDinero" data-bs-toggle="modal"
+                type="button">Ingresar</button>
+                <button class="btn btn-light" data-bs-target="#RetirarDinero" data-bs-toggle="modal"
+                type="button">Retirar</button>
+            </div>
+        </section>
+        <section class="text-dark">
+            <!-- MODAL SALDO -->
+            <div class="modal fade" id="ConsultarSaldo" data-bs-backdrop="static" data-bs-keyboard="false" 
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-dark" id="staticBackdropLabel">Saldo</h1>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-dark" id="cuerpo-modal">
+                            <input type="number" name="Saldo" id="S1" value="500">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Understood</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL INGRESO -->
+            <div class="modal fade" id="IngresarDinero" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-dark" id="staticBackdropLabel">Ingresar</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-dark" id="IngresarModal">
+                            <form id="Ingresar-Dinero">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail11" class="form-label"> Monto a ingresar</label>
+                                </div>
+                            <input type="number" class="form-control"  id="Cant" placeholder="Cantidad" name="cantidad" aria-describedby="emailHelp">
+                        </div>
+                    </form>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" form="Ingresar-Dinero" class="btn btn-primary" value="Depositar" id="bt4" onclick="formula3()"> Depositar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--MODAL RETIRO-->
+            <div class="modal fade" id="RetirarDinero" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-dark" id="staticBackdropLabel">retirar</h1> 
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-dark" id="cuerpo-modal">
+                        <input type="number" class="form-control"  id="Cant1" placeholder="Cantidad" name="cantidad" aria-describedby="emailHelp">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" form="RetirarDinero" class="btn btn-primary" value="Retirar" id="bt4" onclick="formula5()"> Retirar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>
